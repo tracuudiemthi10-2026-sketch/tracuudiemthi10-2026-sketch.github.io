@@ -68,41 +68,31 @@
         <span id="live-clock">Saturday, 13/06/2026 - 00:00:00 |</span> <br>
         <div class="year-box" id="live-year">2026</div>
     </div>
-        <div class="search-section" style="text-align: center; margin-top: 20px;">
-    <p class="search-subtitle" style="font-family: Arial, sans-serif; font-size: 14px; color: #666;">Tìm theo: Số Báo Danh</p>
+        <div class="search-section" style="text-align: left; margin: 20px auto; width: 100%; max-width: 1000px; padding: 0 10px; box-sizing: border-box;">
     
-        <div class="form-row" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-        <!-- 1. Ô nhập số báo danh -->
-        <input type="text" id="sbd-input" class="input-sbd" placeholder="" style="border-radius: 4px; border: 1px solid #aaa; padding: 6px 12px; width: 320px; height: 34px; box-sizing: border-box;">
+    <div class="form-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; margin-bottom: 20px; width: 100%;">
+        <input type="text" id="sbd-input" class="input-sbd" placeholder="" style="border-radius: 4px; border: 1px solid #767676; padding: 4px 8px; width: 350px; height: 30px; box-sizing: border-box; font-size: 14px;">
         
-        <!-- 2. Khung chứa ảnh mã Captcha nền rối -->
-        <div id="captcha-box" class="captcha-box" style="font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; font-style: italic; color: #000; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2234%22><text x=%2210%22 y=%2225%22 font-family=%22Courier%22 font-size=%2220%22 fill=%22black%22 %22>wyjcq2</text><path d=%22M0 10 L100 25 M10 30 L90 5 M30 0 L50 34%22 stroke=%22black%22 stroke-width=%221%22/></svg>'); background-color: #ccc; border: 1px solid #999; padding: 0 8px; height: 34px; line-height: 34px; letter-spacing: 2px; user-select: none; text-decoration: line-through;">wyjcq2</div>
+        <div id="captcha-box" class="captcha-box" style="font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; font-style: italic; color: #000; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%2230%22><text x=%2210%22 y=%2222%22 font-family=%22Courier%22 font-size=%2218%22 fill=%22black%22 font-weight=%22bold%22>wyjcq2</text><path d=%22M0 12 L90 18 M10 25 L80 5 M20 2 L40 28%22 stroke=%22black%22 stroke-width=%221.5%22/></svg>'); background-color: #bbb; border: 1px solid #767676; width: 90px; min-width: 90px; height: 30px; line-height: 28px; text-align: center; letter-spacing: 1px; user-select: none; box-sizing: border-box;">wyjcq2</div>
         
-        <!-- 3. Biểu tượng đổi mã Captcha mới màu đỏ chuẩn gốc -->
-        <span class="btn-refresh" onclick="refreshCaptcha()" style="color: #d93025; font-size: 20px; cursor: pointer; font-weight: bold; user-select: none; display: inline-block; padding: 0 4px;">&#8635;</span>
+        <span class="btn-refresh" onclick="refreshCaptcha()" style="color: #cc0000; font-size: 22px; cursor: pointer; font-weight: bold; user-select: none; display: inline-block; padding: 0 2px; line-height: 30px;">&#10227;</span>
         
-        <!-- 4. Ô nhỏ màu trắng để người dùng tự nhập mã vào -->
-        <input type="text" id="captcha-input" class="input-captcha" style="border-radius: 4px; border: 1px solid #aaa; padding: 6px; width: 30px; height: 34px; box-sizing: border-box; background-color: #fff;">
+        <input type="text" id="captcha-input" class="input-captcha" style="border-radius: 4px; border: 1px solid #aaa; padding: 4px; width: 35px; min-width: 35px; height: 30px; text-align: center; box-sizing: border-box; background-color: #fff; font-size: 14px;">
         
-        <!-- 5. Nút Tìm kiếm màu xanh dương + Kính lúp trắng -->
-        <button class="btn-search" onclick="executeSearch()" style="border-radius: 4px; height: 34px; background-color: #1a73e8; color: white; border: none; padding: 0 16px; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" fill="white">
+        <button class="btn-search" onclick="executeSearch()" style="border-radius: 4px; height: 30px; background-color: #1a73e8; color: white; border: none; padding: 0 12px; font-size: 13px; font-family: Arial, sans-serif; cursor: pointer; display: flex; align-items: center; gap: 6px; white-space: nowrap; box-sizing: border-box;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 32 32" fill="white">
                 <path d="M31.008 27.231l-7.571-7.572c1.611-2.189 2.563-4.883 2.563-7.801 0-7.38-6-13.38-13.38-13.38s-13.38 6-13.38 13.38 6 13.38 13.38 13.38c2.917 0 5.612-0.952 7.801-2.562l7.572 7.571c0.523 0.523 1.372 0.523 1.896 0l2.919-2.918c0.524-0.524 0.524-1.373 0-1.897zM4.619 11.858c0-5.183 4.201-9.384 9.384-9.384s9.384 4.201 9.384 9.384-4.201 9.384-9.384 9.384-9.384-4.201-9.384-9.384z"></path>
             </svg>
             Tìm kiếm
         </button>
+    </div>
+
+    <h2 style="font-family: Arial, sans-serif; font-size: 26px; font-weight: normal; color: #202124; margin-top: 15px; margin-bottom: 10px; text-align: left;">Tra cứu điểm thi tuyển sinh lớp 10 năm 2026</h2>
+    
+    <p class="search-subtitle" style="font-family: Arial, sans-serif; font-size: 14px; color: #3c4043; margin-top: 0; margin-bottom: 20px; text-align: left;">Tìm theo: Số Báo Danh</p>
+
         </div>
-            
-
-    <h2 style="font-family: Arial, sans-serif; font-size: 24px; font-weight: normal; color: #333333; margin-top: 25px; margin-bottom: 15px; text-align: center;">Tra cứu điểm thi tuyển sinh vào 10 năm 2026</h2>
-    
-
-    
-
-        
-    
-        
-            <table>
+    <table>
                 <thead>
                     <tr>
                         <th>Số Báo Danh</th><th>Họ và tên</th><th>Giới Tính</th><th>Ngày sinh</th><th>Điểm ưu tiên</th>
